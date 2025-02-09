@@ -30,8 +30,8 @@ config_file = {
     },
     "mouse_options": {
         "button": "left",
-        "min_duration": 0.05,
-        "max_duration": 0.2,
+        "min_press_duration": 0.05,
+        "max_press_duration": 0.2,
         "max_jitter": 2,
     }
 }
@@ -201,7 +201,9 @@ def login(username: str, password: str):
                 mouse_opts = config_file["mouse_options"]
 
                 human_like_mouse_move(position[0] + 15, position[1] + 15)
-                random_click(**config_file["mouse_options"])
+                random_click(button=config_file["mouse_options"]["button"],
+                             min_press_duration=config_file["mouse_options"]["min_press_duration"],
+                             max_press_duration=config_file["mouse_options"]["max_press_duration"])
                 time.sleep(2)
 
                 x, y = calculate_target_position(window, *relative_position['Launcher']['username'])
@@ -215,8 +217,8 @@ def login(username: str, password: str):
                                 max_interval=config_file["typing_options"]["max_interval"],
                                 simulate_typo=config_file["typing_options"]["simulate_typo"],
                                 typo_probability=config_file["typing_options"]["typo_probability"])
-                press_key('tab', **config_file["key_press_options"])
-
+                press_key('tab', press_duration_min=config_file['key_press_options']['key_press_duration_min'],
+                          press_duration_max=config_file['key_press_options']['key_press_duration_max'])
 
                 human_like_type(text=password, min_interval=config_file["typing_options"]["min_interval"],
                                 max_interval=config_file["typing_options"]["max_interval"],
@@ -233,14 +235,14 @@ def login(username: str, password: str):
                 new_position, _ = find_image_position(template=template, confidence=config_file["confidence"],
                                                       screen_region=region)
                 return not new_position
-            except Exception as e:
+            except ImportError as e:
                 logger.error(f"Authentication error: {str(e)}")
                 return False
         else:
             logger.info("Already logged in")
             return True
 
-    except Exception as e:
+    except ImportError as e:
         logger.critical(f"Login critical error: {str(e)}\n{traceback.format_exc()}")
         return False
 
@@ -273,6 +275,7 @@ def launch_game():
     except Exception as e:
         logger.error(f"Game launch failed: {str(e)}\n{traceback.format_exc()}")
         return False
+
 
 # class TestAutomation(unittest.TestCase):
 #     def setUp(self):
