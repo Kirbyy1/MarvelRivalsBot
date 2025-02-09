@@ -1,0 +1,12 @@
+2025-02-09 17:12:42,861 - INFO - main - login - Starting login process for test_user
+2025-02-09 17:12:54,080 - DEBUG - main - login - Window focused
+2025-02-09 17:12:55,922 - ERROR - main - login - Authentication error: random_click() got an unexpected keyword argument 'min_duration'
+2025-02-09 17:12:55,922 - INFO - main - wrapper - Resource usage - login: 0.0% CPU, 0.0MB RAM
+2025-02-09 17:19:58,706 - INFO - main - login - Starting login process for test_user
+2025-02-09 17:20:09,823 - DEBUG - main - login - Window focused
+2025-02-09 17:20:11,418 - ERROR - main - login - Authentication error: random_click() got an unexpected keyword argument 'min_duration'
+2025-02-09 17:20:11,418 - INFO - main - wrapper - Resource usage - login: 0.0% CPU, 0.0MB RAM
+2025-02-09 17:24:37,682 - INFO - main - login - Starting login process for test_user
+2025-02-09 17:24:48,688 - DEBUG - main - login - Window focused
+2025-02-09 17:24:51,802 - ERROR - main - login - Authentication error: random_click() got an unexpected keyword argument 'min_duration'
+2025-02-09 17:24:51,802 - INFO - main - wrapper - Resource usage - login: 0.0% CPU, 0.0MB RAM

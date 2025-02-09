@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#333"/>
+
+  <!-- Hand Shape -->
+  <path d="M20 50 L30 10 L40 50 L30 45 Z" fill="white" stroke="black" stroke-width="2"/>
+
+  <!-- Circuit Lines -->
+  <line x1="30" y1="20" x2="10" y2="5" stroke="#00CCFF" stroke-width="3"/>
+  <line x1="30" y1="30" x2="5" y2="30" stroke="#00CCFF" stroke-width="3"/>
+  <line x1="30" y1="40" x2="10" y2="55" stroke="#00CCFF" stroke-width="3"/>
+</svg>
